@@ -30,8 +30,7 @@ def translate_it(text, from_lang=None, to_lang='ru', input_file_path=None, outpu
     * - обязательные к передаче аргументы
 
     Учитывая все аргументы по-умолчанию, можно пользоваться функцией в упрощённом варианте, передавая ей только
-    текст. В таком варианте
-
+    текст. В таком варианте она автоматически определит язык ввода и переведёт текст на русский язык.
     """
 
     if input_file_path is not None:
@@ -42,7 +41,7 @@ def translate_it(text, from_lang=None, to_lang='ru', input_file_path=None, outpu
     params = {
         'key': API_KEY,
         'text': text,
-        'lang': '{0}-{1}'.format(from_lang, to_lang),
+        'lang': to_lang #'{0}-{1}'.format(from_lang, to_lang),
     }
 
     response = requests.get(URL, params=params)
@@ -63,6 +62,5 @@ def translate_it(text, from_lang=None, to_lang='ru', input_file_path=None, outpu
 
 # translate_it(text, from_lang, to_lang='ru', input_file_path=None, output_file_path='default_translate_log.txt'):
 if __name__ == '__main__':
-    # print(translate_it('habló', 'es', 'ru', 'ES.txt', 'ES_translated.txt'))
-    # print(translate_it('habló', 'es', 'ru', 'ES.txt', 'ES_translated.txt'))
-    print(translate_it('habló'))
+    print(translate_it('habló', 'es', 'ru', 'ES.txt', 'ES_translated.txt'))
+
