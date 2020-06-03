@@ -59,8 +59,3 @@ def translate_it(text, from_lang=None, to_lang='ru', input_file_path=None, outpu
             output_file.write(''.join(json_['text']))
 
     return ''.join(json_['text'])
-
-# translate_it(text, from_lang, to_lang='ru', input_file_path=None, output_file_path='default_translate_log.txt'):
-if __name__ == '__main__':
-    print(translate_it('habló', 'es', 'ru', 'ES.txt', 'ES_translated.txt'))
-
