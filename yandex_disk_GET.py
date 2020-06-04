@@ -20,6 +20,27 @@ def get_upload_link(path):
 
 	return ''.join(json_['href'])
 
-upload_link = get_upload_link('DE.txt')
 
-print(upload_link)
+path = 'C:\Users\79055\PycharmProjects\homework_http\DE.txt'
+
+def upload_file(path):
+
+
+	upload_link = get_upload_link(path)
+
+	params = {'path': path}
+
+
+	response = requests.put(upload_link, params=params)
+	json_ = response.json()
+
+	return ''.join(json_['href'])
+
+print(upload_file(path))
+
+
+if __name__ == '__main__':
+
+	upload_link = get_upload_link('DE.txt')
+
+	print(upload_link)
