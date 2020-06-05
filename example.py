@@ -8,16 +8,6 @@ URL = 'https://translate.yandex.net/api/v1.5/tr.json/translate'
 
 def translate_it(text, from_lang=None, to_lang='ru', input_file_path=None, output_file_path='default_translate_log.txt'):
     """
-    https://translate.yandex.net/api/v1.5/tr.json/translate ?
-    key=<API-ключ>
-     & text=<переводимый текст>
-     & lang=<направление перевода>
-     & [format=<формат текста>]
-     & [options=<опции перевода>]
-     & [callback=<имя callback-функции>]
-    :param to_lang:
-    :return:
-
     ПОРЯДОК ПЕРЕДАЧИ АРГУМЕНТОВ:
     1* - ручной ввод текста для перевода (если переводим из файла, текст из файла заменит это поле, так что
     можно оставить заглушку)
